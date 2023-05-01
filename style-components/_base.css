@@ -16,3 +16,7 @@ body {
 html {
   background-color: var(--light);
 }
+
+canvas {
+  width: 100%;
+}
