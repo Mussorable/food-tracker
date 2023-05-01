@@ -1,0 +1,9 @@
+.form-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
