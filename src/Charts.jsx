@@ -6,6 +6,10 @@ export default function Charts() {
   const canvasRef = useRef();
 
   useEffect(() => {
+    console.log("+");
+  }, []);
+
+  useEffect(() => {
     new Chart(canvasRef.current, {
       type: "doughnut",
       data: {
@@ -21,6 +25,9 @@ export default function Charts() {
             hoverOffset: 30,
           },
         ],
+      },
+      options: {
+        responsive: true,
       },
     });
   }, []);
