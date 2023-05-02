@@ -1,0 +1,19 @@
+.input {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.select {
+  all: unset;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  background-color: white;
+  background-image: url("/images/down_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  background-size: 30px;
+  font-weight: bold;
+  position: relative;
+}

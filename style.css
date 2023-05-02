@@ -1,0 +1,6 @@
+@import "./style-components/_base.css";
+@import "./style-components/container.css";
+@import "./style-components/fonts.css";
+@import "./style-components/form.css";
+@import "./style-components/input.css";
+@import "./style-components/button.css";

@@ -1,0 +1,21 @@
+.button {
+  all: unset;
+  background-color: var(--secondary);
+  cursor: pointer;
+  border: 1px solid var(--surface);
+  border-radius: 4px;
+  padding: 10px 20px;
+  transition: 0.3s;
+  opacity: 0.8;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: var(--hover);
+  color: white;
+  opacity: 1;
+}
+
+.button:active {
+  translate: 1px 1px;
+}
