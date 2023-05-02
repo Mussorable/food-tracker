@@ -3,7 +3,11 @@ import { useState } from "react";
 import useFetch from "./useFetch";
 import Input from "./components/Input";
 
-export default function AddFood({ onHandleFetchGet, onHandleFetchPost }) {
+export default function AddFood({
+  onHandleFetchGet,
+  onHandleFetchPost,
+  onHandleFoodItems,
+}) {
   const [foodName, setFoodName] = useState("");
   const [carbs, setCarbs] = useState("");
   const [protein, setProtein] = useState("");
@@ -30,6 +34,12 @@ export default function AddFood({ onHandleFetchGet, onHandleFetchPost }) {
       protein,
       fat,
     }).catch((error) => console.error(error));
+
+    onHandleFoodItems((prevValue) => [
+      ...prevValue,
+      { foodName, carbs, protein, fat },
+    ]);
+
     resetForm();
   }
 
