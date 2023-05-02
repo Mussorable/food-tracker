@@ -12,7 +12,6 @@ export default function AddFood({ onHandleFetchGet, onHandleFetchPost }) {
 
   useEffect(() => {
     onHandleFetchGet("foods.json").then((data) => setFood(Object.keys(data)));
-    onHandleFetchGet("foodlogs.json").then((data) => console.log(data));
   }, []);
 
   function resetForm() {
