@@ -1,0 +1,14 @@
+.DS_Store
+dist/
+coverage/
+.vscode/
+node_modules/
+babel.config.cjs
+jest.config.mjs
+.package-lock.json
+package-lock.json
+_metadata.json
+package.json
+package.json
+vite.config.js
+App.test.jsx
