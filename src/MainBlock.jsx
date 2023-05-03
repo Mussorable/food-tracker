@@ -22,10 +22,6 @@ export default function MainBlock({
   }
 
   useEffect(() => {
-    console.log(foodElements);
-  }, [foodElements]);
-
-  useEffect(() => {
     onHandleFetchGet("foodlogs.json").then((data) => {
       setChartData(data);
     });
