@@ -4,6 +4,7 @@ import useFetch from "./useFetch";
 import Input from "./components/Input";
 
 export default function AddFood({
+  onHandleFoodElements,
   onHandleFetchGet,
   onHandleFetchPost,
   onHandleFoodItems,
@@ -34,6 +35,13 @@ export default function AddFood({
       protein,
       fat,
     }).catch((error) => console.error(error));
+
+    // --------
+    onHandleFoodElements([
+      parseFloat(carbs),
+      parseFloat(fat),
+      parseFloat(protein),
+    ]);
 
     onHandleFoodItems((prevValue) => [
       ...prevValue,

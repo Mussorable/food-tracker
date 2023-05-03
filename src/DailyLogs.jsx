@@ -13,10 +13,6 @@ export default function DailyLogs({
     });
   }, []);
 
-  useEffect(() => {
-    console.log(foodItems);
-  }, [foodItems]);
-
   return (
     <div className="container">
       <h2>Daily Logs</h2>

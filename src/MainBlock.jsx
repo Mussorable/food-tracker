@@ -22,6 +22,10 @@ export default function MainBlock({
   }
 
   useEffect(() => {
+    console.log(foodElements);
+  }, [foodElements]);
+
+  useEffect(() => {
     onHandleFetchGet("foodlogs.json").then((data) => {
       setChartData(data);
     });
@@ -38,6 +42,7 @@ export default function MainBlock({
       <h1 className="heading--xl">Food tracker</h1>
       <div className="main-information-box">
         <AddFood
+          onHandleFoodElements={setFoodElements}
           onHandleFoodItems={onHandleFoodItems}
           onHandleFetchGet={onHandleFetchGet}
           onHandleFetchPost={onHandleFetchPost}
