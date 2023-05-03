@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 
-export default function DailyLogs({ onHandleFetchGet }) {
-  const [foodItems, setFoodItems] = useState([]);
-
+export default function DailyLogs({
+  onHandleFetchGet,
+  onHandleFoodItems,
+  foodItems,
+}) {
   useEffect(() => {
     onHandleFetchGet("foodlogs.json").then((data) => {
       Object.values(data).forEach((food) => {
-        setFoodItems((prevValue) => [...prevValue, food]);
+        onHandleFoodItems((prevValue) => [...prevValue, food]);
       });
     });
   }, []);
-
-  useEffect(() => {
-    console.log(foodItems);
-  }, [foodItems]);
 
   return (
     <div className="container">

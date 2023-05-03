@@ -3,7 +3,11 @@ import { useEffect } from "react";
 import AddFood from "./AddFood";
 import Charts from "./Charts";
 
-export default function MainBlock({ onHandleFetchGet, onHandleFetchPost }) {
+export default function MainBlock({
+  onHandleFetchGet,
+  onHandleFetchPost,
+  onHandleFoodItems,
+}) {
   const [totalCarbs, setTotalCarbs] = useState(0);
   const [totalFat, setTotalFat] = useState(0);
   const [totalProtein, setTotalProtein] = useState(0);
@@ -16,6 +20,10 @@ export default function MainBlock({ onHandleFetchGet, onHandleFetchPost }) {
       setTotalProtein((prevValue) => prevValue + parseFloat(food.protein));
     });
   }
+
+  useEffect(() => {
+    console.log(foodElements);
+  }, [foodElements]);
 
   useEffect(() => {
     onHandleFetchGet("foodlogs.json").then((data) => {
@@ -34,6 +42,8 @@ export default function MainBlock({ onHandleFetchGet, onHandleFetchPost }) {
       <h1 className="heading--xl">Food tracker</h1>
       <div className="main-information-box">
         <AddFood
+          onHandleFoodElements={setFoodElements}
+          onHandleFoodItems={onHandleFoodItems}
           onHandleFetchGet={onHandleFetchGet}
           onHandleFetchPost={onHandleFetchPost}
         />
